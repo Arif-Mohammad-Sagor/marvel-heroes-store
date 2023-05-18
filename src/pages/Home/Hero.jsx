@@ -20,13 +20,13 @@ const Hero = () => {
       <div className="w-3/5">
         <div className="carousel w-full">
           <div id="item1" className="carousel-item w-full">
-            <img src={banner1} className="w-full h-[450px] rounded-md" />
+            <img src={banner4} className="w-full h-[450px] rounded-md" />
           </div>
           <div id="item2" className="carousel-item w-full">
-            <img src={banner2} className="w-full h-[450px] rounded-md" />
+            <img src={banner1} className="w-full h-[450px] rounded-md" />
           </div>
           <div id="item3" className="carousel-item w-full">
-            <img src={banner3} className="w-full h-[450px] rounded-md" />
+            <img src={banner2} className="w-full h-[450px] rounded-md" />
           </div>
         </div>
         <div className="flex justify-center w-full py-2 gap-2">
