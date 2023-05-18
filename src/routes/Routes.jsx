@@ -4,11 +4,14 @@ import Main from "../layouts/Main";
 import Home from "../pages/Home/Home";
 import SignUp from "../pages/Login/SignUp";
 import Login from "../pages/Login/Login";
+import Error404 from "../layouts/Error404";
+
 
 const router = createBrowserRouter([
   {
     path: "/",
-        element: <Main></Main>,
+    element: <Main></Main>,
+
         children: [
             {
                 path: '/',
@@ -22,7 +25,9 @@ const router = createBrowserRouter([
                 path: '/signup',
                 element: <SignUp></SignUp>
             }
-    ]
+    ],
+        errorElement:<Error404></Error404>
+
   },
 ]);
 
