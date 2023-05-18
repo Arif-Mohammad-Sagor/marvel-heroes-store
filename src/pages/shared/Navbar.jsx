@@ -1,8 +1,22 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import logo from '../../assets/logo.png';
+import React, { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import logo from "../../assets/logo.png";
+import { AuthContext } from "../../AuthContextProviders/AuthProviders";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user);
+
+  const handleLogout = () => {
+    logOut()
+      .then((res) => {
+        console.log(res);
+      })
+
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   return (
     <div className="navbar bg-base-100 px-10">
       <div className="navbar-start">
@@ -38,8 +52,8 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <img src={logo} alt="company-logo" className="ro"/>
-       <p className="text-3xl ml-4 font-semibold"> Toys-Mart</p>
+        <img src={logo} alt="company-logo" className="ro" />
+        <p className="text-2xl ml-4 font-semibold"> Toys-Mart</p>
       </div>
       <div className="lg:ml-64 hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -59,17 +73,27 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end ">
-        <ul className="flex justify-center items-center">
-          <li>
-            <NavLink to="/login">Login</NavLink>
-          </li>
-          <li>user</li>
+        <div className="flex justify-center items-center">
+          <span className="flex items-center gap-x-1">
+            {user ? (
+              <>
+                <img
+                  src={user.photoURL}
+                  className="w-8 h-8 rounded-full bg-gray-500"
+                />
 
-          <li>
-            {" "}
-            <button>Logout</button>
-          </li>
-        </ul>
+                <button className="btn btn-sm" onClick={handleLogout}>
+                  {" "}
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <Link to="/login" className="btn btn-sm ">Login</Link>
+              </>
+            )}
+          </span>
+        </div>
       </div>
     </div>
   );

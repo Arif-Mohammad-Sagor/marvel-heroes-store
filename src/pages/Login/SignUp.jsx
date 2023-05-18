@@ -1,19 +1,48 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import {FaGoogle,FaGithub} from 'react-icons/fa'
+import {FaGoogle} from 'react-icons/fa'
 import { AuthContext } from "../../AuthContextProviders/AuthProviders";
+import { updateProfile } from "firebase/auth";
 
 const SignUp = () => {
-    const { signInWithGoogle, signInWithGithub } = useContext(AuthContext);
+  const { signInWithGoogle, createUser } = useContext(AuthContext);
+  const [error, setError] = useState('');
 
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      const form = e.target;
-      const name = form.name.value;
-      const email = form.email.value;
-      const user = { name, email };
-      console.log(user);
-    }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const photoURL = form.photo.value;
+
+    createUser(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        // console.log(loggedUser);
+        updateProfile(loggedUser, {
+          displayName: name,
+          photoURL: photoURL,
+        })
+          .then(() => {
+            console.log("profile updated");
+          })
+          .catch((error) => {
+            console.log(error.message);
+          });
+        // navigate("/login");
+        // setSuccess("successfully created");
+        // setError("");
+      })
+      .catch((error) => {
+        // setError(error.message);
+        // setSuccess("");
+        console.log(error);
+      });
+    form.reset();
+  };
+
     const handleGoogleSignIn = () => {
         signInWithGoogle()
             .then(result => {
@@ -23,24 +52,19 @@ const SignUp = () => {
             console.log(error.message)
         })
     }
-     const handleGithubSignIn = () => {
-       signInWithGithub()
-         .then((result) => {
-           console.log(result);
-         })
-         .catch((error) => {
-           console.log(error.message);
-         });
-     };
+
   return (
-    <div className="w-2/5 mx-auto">
+    <div className="w-full mx-auto mb-4">
       <div className="hero min-h-screen">
         <div className="hero-content flex-col">
           <div className="text-center ">
-            <h1 className="text-2xl font-bold">Plese SignUp</h1>
+            <h1 className="text-2xl font-bold"> SignUp</h1>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form onSubmit={handleSubmit} className="card-body">
+          <div className="  w-full shadow-2xl bg-base-100">
+            <form
+              onSubmit={handleSubmit}
+              className="card-body grid grid-cols-2"
+            >
               <div>
                 <label className="label">
                   <span className="label-text">Name</span>
@@ -73,6 +97,24 @@ const SignUp = () => {
                   placeholder="password"
                   className="input input-bordered"
                 />
+              </div>
+              <div>
+                <label className="label">
+                  <span className="label-text">Photo-Url</span>
+                </label>
+                <input
+                  type="url"
+                  name="photo"
+                  placeholder="photo-url"
+                  className="input input-bordered"
+                />
+              </div>
+              <div className=" mt-1">
+                <button
+                  type="submit"
+                  className="btn btn-outline btn-block">SignUp</button>
+              </div>
+              <div>
                 <label className="label flex">
                   <p className="text-sm text-gray-400">
                     Already have an account ?{" "}
@@ -82,25 +124,20 @@ const SignUp = () => {
                   </p>
                 </label>
               </div>
-              <div className=" mt-1">
-                <button className="btn btn-primary">SignUp</button>
-              </div>
-              <div className="divider"></div>
+            </form>
+            <div className="px-8 mb-6">
+              {/* <div className="divider"></div> */}
               <div className="text-center  text-gray-500 text-lg">
-                              <p className="py-1">Or Signin with </p>
+                <p className="pb-2">Or <br/>Signup with </p>
 
-                              <button className="btn btn-outline btn-circle"
-                              onClick={handleGoogleSignIn}>
-                  <FaGoogle></FaGoogle>
-                              </button>
-
-                              <button
-                                  onClick={handleGithubSignIn}
-                                  className="btn btn-outline btn-circle">
-                  <FaGithub></FaGithub>
+                <button
+                  className="btn btn-outline btn-block"
+                  onClick={handleGoogleSignIn}
+                >
+                  <FaGoogle></FaGoogle>oogle
                 </button>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
