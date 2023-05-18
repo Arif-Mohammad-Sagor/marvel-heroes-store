@@ -32,21 +32,33 @@ const ShopCategory = () => {
         Shop By Category
       </p>
 
-          <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index) }>
+      <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
         <TabList>
           <Tab>Civil War</Tab>
           <Tab>Avengers</Tab>
           <Tab>Rangkok</Tab>
         </TabList>
 
-        <TabPanel>
-                  <div className="grid md:grid-cols-2">
-                      {toys && toys.map(toy => <div key={toy._id}>
-                          <p>{toy?.Name}</p>
-                      </div>)}
-          </div>
-        </TabPanel>
-
+        {/* <div className="grid md:grid-cols-2">
+          {toys &&
+            toys.map((toy) => (
+              <div key={toy._id}>
+                <p>{toy?.Name}</p>
+              </div>
+            ))}
+        </div> */}
+        <div className="grid md:grid-cols-2">
+          {toys &&
+            toys.map((toy) => {
+              return (
+                <div>
+                  <TabPanel key={toy._id}>
+                    <p>{toy.name}</p>
+                  </TabPanel>
+                </div>
+              );
+            })}
+        </div>
       </Tabs>
     </div>
   );
