@@ -18,7 +18,7 @@ const Navbar = () => {
       });
   };
   return (
-    <div className="navbar bg-base-100 px-10">
+    <div className="navbar bg-slate-100 px-6 py-4">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -68,7 +68,7 @@ const Navbar = () => {
           </ul>
         </div>
         <img src={logo} alt="company-logo" className="ro" />
-        <p className="md:text-2xl ml-4 font-semibold"> Toys-Mart</p>
+        <p className="md:text-2xl ml-4 font-semibold font-serif"> Toys-Mart</p>
       </div>
       <div className="lg:ml-64 hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -108,14 +108,14 @@ const Navbar = () => {
                   className="w-8 h-8 rounded-full bg-gray-500"
                 />
 
-                <button className="btn btn-sm" onClick={handleLogout}>
+                <button className="btn btn-primary " onClick={handleLogout}>
                   {" "}
                   Logout
                 </button>
               </>
             ) : (
               <>
-                <Link to="/login" className="btn btn-sm ">
+                <Link to="/login" className="btn btn-primary  ">
                   Login
                 </Link>
               </>
