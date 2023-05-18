@@ -8,7 +8,6 @@ import {
   FaMapMarker,
   FaMailBulk,
   FaPhoneAlt,
-  FaMailchimp,
 } from "react-icons/fa";
 const Footer = () => {
   return (
