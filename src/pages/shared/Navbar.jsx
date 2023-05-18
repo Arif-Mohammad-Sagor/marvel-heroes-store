@@ -42,18 +42,33 @@ const Navbar = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <NavLink> Home</NavLink>
+              <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <NavLink>Item 2</NavLink>
+              <NavLink to="/toys">All-Toys</NavLink>
             </li>
+
             <li>
-              <NavLink>Item 3</NavLink>
+              <NavLink to="/blogs">Blogs</NavLink>
             </li>
+            {user ? (
+              <li>
+                <NavLink to="/myToys">My-Toys</NavLink>
+              </li>
+            ) : (
+              <></>
+            )}
+            {user ? (
+              <li>
+                <NavLink to="/addToy"> AddToys</NavLink>
+              </li>
+            ) : (
+              <></>
+            )}
           </ul>
         </div>
         <img src={logo} alt="company-logo" className="ro" />
-        <p className="text-2xl ml-4 font-semibold"> Toys-Mart</p>
+        <p className="md:text-2xl ml-4 font-semibold"> Toys-Mart</p>
       </div>
       <div className="lg:ml-64 hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -67,9 +82,20 @@ const Navbar = () => {
           <li>
             <NavLink to="/blogs">Blogs</NavLink>
           </li>
-          <li>
-            <NavLink to="/myToys">My-Toys</NavLink>
-          </li>
+          {user ? (
+            <li>
+              <NavLink to="/myToys">My-Toys</NavLink>
+            </li>
+          ) : (
+            <></>
+          )}
+          {user ? (
+            <li>
+              <NavLink to="/addToy"> AddToys</NavLink>
+            </li>
+          ) : (
+            <></>
+          )}
         </ul>
       </div>
       <div className="navbar-end ">
@@ -89,7 +115,9 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <Link to="/login" className="btn btn-sm ">Login</Link>
+                <Link to="/login" className="btn btn-sm ">
+                  Login
+                </Link>
               </>
             )}
           </span>
