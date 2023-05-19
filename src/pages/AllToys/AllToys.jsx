@@ -81,7 +81,7 @@ const AllToys = () => {
                         onClick={() => handleDetail(`${toy._id}`)}
                         className="btn btn-primary"
                       >
-                        <Link to={`/allToys/${toy._id}`}>Detail</Link>
+                        <Link to={`/singleToys/${toy._id}`}>Detail</Link>
                       </button>
                     </td>
                   </tr>
