@@ -7,6 +7,8 @@ import Error404 from "../layouts/Error404";
 import Home from "../pages/Home/Home/Home";
 import Blog from "../pages/Blogs/Blog";
 import AllToys from "../pages/AllToys/AllToys";
+import SingleToy from "../pages/SingleToy/SingleToy";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -34,7 +36,15 @@ const router = createBrowserRouter([
       {
         path: "/allToys",
         element: <AllToys></AllToys>,
-        loader: () => fetch(`http://localhost:5000/allToys`)
+        loader: () => fetch(`http://localhost:5000/allToys`),
+      },
+      {
+        path: "/allToys/:id",
+        element: (
+          <PrivateRoute>
+            <SingleToy></SingleToy>
+          </PrivateRoute>
+        )
       },
     ],
     errorElement: <Error404></Error404>,

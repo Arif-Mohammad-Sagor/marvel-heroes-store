@@ -1,0 +1,25 @@
+[
+    {
+      "_id": "64665459627820700dd51916",
+      "SellerName": "Mr.Jerry",
+      "img": "https://ibb.co/mCrL4Vc",
+      "name": "Thor",
+      "price": 29.99,
+      "rating": 4.8,
+      "category": "Avengers",
+      "subCategory": "Super-Villen",
+      "avialableQty": "200",
+      "description": "Loki, the God of Mischief, is a complex and fascinating character in the Marvel Universe. Originally depicted as a villain, Loki has evolved into a multifaceted anti-hero over the years. As the adopted brother of Thor, the God of Thunder, Loki possesses immense magical abilities and cunning intellect.Known for his mischievous nature and shape-shifting abilities, Loki is a master manipulator, constantly weaving intricate schemes and playing mind games with those around him. His unpredictable nature and flair for theatrics make him an enigmatic and compelling character."
+    },{
+      "_id": "64665459627820700dd51916",
+      "SellerName": "Mr.Jerry",
+      "img": "https://ibb.co/n8nRLQq",
+      "name": "Ironman",
+      "price": 39.99,
+      "rating": 4.8,
+      "category": "Avengers",
+      "subCategory": "Super-Hero",
+      "avialableQty": "250",
+      "description":"Iron Man, also known as Tony Stark, is one of the most prominent and influential heroes in the Marvel Universe. He is a genius billionaire, philanthropist, and inventor extraordinaire. Tony Stark uses his unparalleled intellect and technological prowess to create a powerful suit of armor that grants him incredible abilities.Initially driven by self-interest and profit, Tony's life takes a transformative turn when he is captured by terrorists and forced to build weapons. Instead, he constructs a high-tech suit, the Mark I, which becomes the first iteration of his iconic Iron Man armor."
+    }
+]
