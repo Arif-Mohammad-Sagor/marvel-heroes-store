@@ -10,6 +10,7 @@ import AllToys from "../pages/AllToys/AllToys";
 import SingleToy from "../pages/SingleToy/SingleToy";
 import PrivateRoute from "./PrivateRoute";
 import AddAToy from "../pages/AddToys/AddAToy";
+import MyToys from "../pages/MyToys/MyToys";
 
 
 const router = createBrowserRouter([
@@ -51,7 +52,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/addaToy",
-        element:<AddAToy></AddAToy>
+        element: <AddAToy></AddAToy>,
+      },
+      {
+        path: "/myToys",
+        element: (
+          <PrivateRoute>
+            <MyToys></MyToys>
+          </PrivateRoute>
+        ),
       },
     ],
     errorElement: <Error404></Error404>,

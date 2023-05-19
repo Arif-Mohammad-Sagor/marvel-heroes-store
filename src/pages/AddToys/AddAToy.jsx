@@ -38,7 +38,7 @@ const AddAToy = () => {
         .then((data) => {
             console.log(data);
         Swal.fire({
-            icon: "Success",
+            icon: "success",
           text: "Successfully added a toy",
         });
       });
