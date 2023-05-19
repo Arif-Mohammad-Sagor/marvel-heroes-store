@@ -6,9 +6,17 @@ import { AuthContext } from '../../AuthContextProviders/AuthProviders';
 const SingleToy = () => {
     const singleToys = useLoaderData();
     const { user } = useContext(AuthContext);
-    const { name, avialableQty, SellerName, description, img, _id, category, subCategory, price, rating } =
-        singleToys;
-    console.log(singleToys.img)
+    const {
+      toyName,
+      sellerName,
+      email,
+      photoUrl,
+      price,
+      rating,
+      quantity,
+      description,
+      subCategory,
+    } = singleToys;
     // const { id } = useParams();
     // console.log(id);
 
@@ -21,15 +29,17 @@ const SingleToy = () => {
     // console.log(singleToy);
   return (
     <div className="grid grid-cols-2">
-      <div className='bg-slate-200 px-10 py-10 '>
+      <div className="bg-slate-200 px-10 py-10 ">
         <p>
-          <span className="font-semibold text-lg">ToyName:</span> {name}
+          <span className="font-semibold text-lg">ToyName:</span> {toyName}
         </p>
         <p>
-          <span className="font-semibold text-lg">SellerName:</span> {SellerName}
+          <span className="font-semibold text-lg">SellerName:</span>{" "}
+          {sellerName}
         </p>
         <p>
-          <span className="font-semibold text-lg">SellerEmail:</span> {user.email}
+          <span className="font-semibold text-lg">SellerEmail:</span>{" "}
+          {user.email}
         </p>
         <p>
           <span className="font-semibold text-lg">Price:</span> ${price}
@@ -38,14 +48,19 @@ const SingleToy = () => {
           <span className="font-semibold text-lg">Ratings:</span> {rating}
         </p>
         <p>
-          <span className="font-semibold text-lg">Avail.Qnty:</span> {avialableQty} pics
+          <span className="font-semibold text-lg">Avail.Qnty:</span> {quantity}{" "}
+          pics
         </p>
         <p>
           <span className="font-semibold text-lg">Desc:</span> {description}
         </p>
       </div>
       <div className=" flex justify-center items-center bg-slate-200">
-        <img src={img} alt={`img of ${name}`} className="w-96 h-96 object-cover" />
+        <img
+          src={photoUrl}
+          alt={`img of ${toyName}`}
+          className="w-96 h-96 object-cover"
+        />
       </div>
     </div>
   );

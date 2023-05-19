@@ -70,12 +70,12 @@ const AllToys = () => {
                 allToys.map((toy, index) => (
                   <tr key={toy._id}>
                     <td>{index + 1}</td>
-                    <td>{toy?.SellerName}</td>
-                    <td>{toy?.name}</td>
+                    <td>{toy?.sellerName}</td>
+                    <td>{toy?.toyName}</td>
                     <td>{toy?.subCategory}</td>
                     <td>${toy?.price}</td>
                     <td>{toy?.rating}</td>
-                    <td>{toy?.avialableQty}</td>
+                    <td>{toy?.quantity}</td>
                     <td>
                       <button
                         onClick={() => handleDetail(`${toy._id}`)}
