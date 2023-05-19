@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../AuthContextProviders/AuthProviders";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -13,6 +14,23 @@ const MyToys = () => {
   }, []);
 
     const handleDelete = (_id) => {
+        fetch(`http://localhost:5000/usersToy/${_id}`, {
+            method:"DELETE",
+        })
+          .then((res) => res.json())
+            .then((data) => {
+                if (data.deletedCount > 0) {
+                    Swal.fire({
+                      title: "Delete!",
+                      text: "Do you want to detete",
+                      icon: "warning",
+                      confirmButtonText: "Yes",
+                    });
+                      const remaining = myToys.filter((toy) => toy._id !== _id);
+                      setMyToys(remaining);
+                }
+
+          })
 console.log(_id)
     }
   // toyName,
