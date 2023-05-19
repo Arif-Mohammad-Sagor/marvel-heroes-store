@@ -11,6 +11,7 @@ import SingleToy from "../pages/SingleToy/SingleToy";
 import PrivateRoute from "./PrivateRoute";
 import AddAToy from "../pages/AddToys/AddAToy";
 import MyToys from "../pages/MyToys/MyToys";
+import UpdateToy from "../pages/ToysAction/UpdateToy";
 
 
 const router = createBrowserRouter([
@@ -61,6 +62,11 @@ const router = createBrowserRouter([
             <MyToys></MyToys>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/updateToys/:id",
+        element: <UpdateToy></UpdateToy>,
+        loader:({params})=>fetch(`http://localhost:5000/singleToy/${params.id}`)
       },
     ],
     errorElement: <Error404></Error404>,

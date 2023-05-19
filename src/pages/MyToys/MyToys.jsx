@@ -12,9 +12,6 @@ const MyToys = () => {
       .then((data) => setMyToys(data));
   }, []);
 
-    const handleUpdate = (_id) => {
-console.log(_id)
-    }
     const handleDelete = (_id) => {
 console.log(_id)
     }
@@ -57,16 +54,16 @@ console.log(_id)
                 <td>{toy?.quantity}</td>
                 <td colSpan={2} className="text-center">
                   <button
-                    onClick={() => handleUpdate(`${toy._id}`)}
+
                     className="btn btn-primary btn-xs"
                   >
-                    <Link to={`/singleToys/${toy._id}`}>Update</Link>
+                    <Link to={`/updateToys/${toy._id}`}>Update</Link>
                   </button>
                   <button
                     onClick={() => handleDelete(`${toy._id}`)}
                     className="btn btn-secondary btn-xs"
                   >
-                    <Link to={`/singleToys/${toy._id}`}>Delete</Link>
+                    Delete
                   </button>
                 </td>
               </tr>
