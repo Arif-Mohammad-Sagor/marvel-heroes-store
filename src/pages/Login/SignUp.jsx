@@ -1,16 +1,22 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {FaGoogle} from 'react-icons/fa'
 import { AuthContext } from "../../AuthContextProviders/AuthProviders";
 import { updateProfile } from "firebase/auth";
 
 const SignUp = () => {
+
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
   const { signInWithGoogle, createUser } = useContext(AuthContext);
-  const [error, setError] = useState('');
+
 
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const form = e.target;
     const name = form.name.value;
     const email = form.email.value;
@@ -20,7 +26,6 @@ const SignUp = () => {
     createUser(email, password)
       .then((result) => {
         const loggedUser = result.user;
-        // console.log(loggedUser);
         updateProfile(loggedUser, {
           displayName: name,
           photoURL: photoURL,
@@ -31,14 +36,14 @@ const SignUp = () => {
           .catch((error) => {
             console.log(error.message);
           });
-        // navigate("/login");
-        // setSuccess("successfully created");
-        // setError("");
+        navigate("/");
+        setSuccess("successful registration");
+        setError("");
       })
       .catch((error) => {
-        // setError(error.message);
-        // setSuccess("");
-        console.log(error);
+        setError(error.message);
+        setSuccess("");
+
       });
     form.reset();
   };
@@ -46,9 +51,14 @@ const SignUp = () => {
     const handleGoogleSignIn = () => {
         signInWithGoogle()
             .then(result => {
-            console.log(result)
+              console.log(result)
+              navigate('/');
+                 setSuccess("successful registration");
+                 setError("");
             })
-            .catch(error => {
+          .catch(error => {
+               setError(error.message);
+               setSuccess("");
             console.log(error.message)
         })
     }
@@ -110,9 +120,9 @@ const SignUp = () => {
                 />
               </div>
               <div className=" mt-1">
-                <button
-                  type="submit"
-                  className="btn btn-outline btn-block">SignUp</button>
+                <button type="submit" className="btn btn-outline btn-block">
+                  SignUp
+                </button>
               </div>
               <div>
                 <label className="label flex">
@@ -126,9 +136,13 @@ const SignUp = () => {
               </div>
             </form>
             <div className="px-8 mb-6">
-              {/* <div className="divider"></div> */}
+              <p className="text-green-600 text-center">{success}</p>
+              <p className="text-red-600 text-center">{error}</p>
               <div className="text-center  text-gray-500 text-lg">
-                <p className="pb-2">Or <br/>Signup with </p>
+                <p className="pb-2">
+                  Or <br />
+                  Signup with{" "}
+                </p>
 
                 <button
                   className="btn btn-outline btn-block"

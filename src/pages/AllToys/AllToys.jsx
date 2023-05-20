@@ -1,30 +1,34 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link,  useLoaderData } from "react-router-dom";
 
 const AllToys = () => {
 
-    const toys = useLoaderData();
+  const toys = useLoaderData();
+  const [allToys, setAllToys] = useState(toys);
+  const [searchText, setSearchText] = useState("");
+  const [sortValue, setSortValue] = useState("ascending");
 
-    const [allToys, setAllToys] = useState(toys);
-    const [searchText, setSearchText] = useState('');
-
-    const handleSearch = () => {
-           fetch(`http://localhost:5000/allToys/product/${searchText}`)
-             .then((res) => res.json())
-             .then((data) => {
-               console.log(data);
-               setAllToys(data);
-             });
-
-    }
-    // const handleDetail = (_id) => {
-    //     console.log(_id)
-    // }
-console.log(searchText)
-    return (
-      <div>
-        <p className="text-center text-4xl my-4">My All Jobs</p>
-
+  const handleSearch = () => {
+    fetch(`http://localhost:5000/allToys/product/${searchText}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setAllToys(data);
+      });
+  };
+  const handleSort = (e) => {
+    console.log(e.target.value);
+    // setSortValue(e.target.value);
+    fetch(`http://localhost:5000/allToys/sortProduct/${e.target.value}`)
+      .then(res => res.json())
+    .then(data =>setAllToys(data))
+}
+  console.log(allToys );
+  // console.log(toys);
+  return (
+    <div>
+      <p className="text-center text-4xl my-4">My All Jobs</p>
+      <div className="grid grid-cols-2">
         <div className="form-control  mx-auto">
           <div className="input-group flex justify-center mb-4">
             <input
@@ -51,46 +55,53 @@ console.log(searchText)
             </button>
           </div>
         </div>
-        <div className="overflow-x-auto">
-          <table className="table w-full text-center">
-            <thead>
-              <tr>
-                <th>SL.</th>
-                <th>Seller</th>
-                <th>ToyName</th>
-                <th>Sub-Category</th>
-                <th>Price</th>
-                <th>Rating</th>
-                <th>Available Qty.</th>
-                <th>View </th>
-              </tr>
-            </thead>
-            <tbody>
-              {allToys &&
-                allToys.map((toy, index) => (
-                  <tr key={toy._id}>
-                    <td>{index + 1}</td>
-                    <td>{toy?.sellerName}</td>
-                    <td>{toy?.toyName}</td>
-                    <td>{toy?.subCategory}</td>
-                    <td>${toy?.price}</td>
-                    <td>{toy?.rating}</td>
-                    <td>{toy?.quantity}</td>
-                    <td>
-                      <button
-                        onClick={() => handleDetail(`${toy._id}`)}
-                        className="btn btn-primary"
-                      >
-                        <Link to={`/singleToys/${toy._id}`}>Detail</Link>
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-            </tbody>
-          </table>
+        <div>
+          <select className=" border-2" onChange={handleSort}>
+            <option value="sort by price" disabled>
+              Sort by Price
+            </option>
+            <option value="ascending">Ascending by Price</option>
+            <option value="descending">Descending by Price</option>
+          </select>
         </div>
       </div>
-    );
+      <div className="overflow-x-auto">
+        <table className="table w-full text-center">
+          <thead>
+            <tr>
+              <th>SL.</th>
+              <th>Seller</th>
+              <th>ToyName</th>
+              <th>Sub-Category</th>
+              <th>Price</th>
+              <th>Rating</th>
+              <th>Available Qty.</th>
+              <th>View </th>
+            </tr>
+          </thead>
+          <tbody>
+            {allToys &&
+              allToys.map((toy, index) => (
+                <tr key={toy._id}>
+                  <td>{index + 1}</td>
+                  <td>{toy?.sellerName}</td>
+                  <td>{toy?.toyName}</td>
+                  <td>{toy?.subCategory}</td>
+                  <td>${toy?.price}</td>
+                  <td>{toy?.rating}</td>
+                  <td>{toy?.quantity}</td>
+                  <td>
+                    <button className="btn btn-primary">
+                      <Link to={`/singleToys/${toy._id}`}>Detail</Link>
+                    </button>
+                  </td>
+                </tr>
+              ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
 };
 
 export default AllToys;

@@ -13,7 +13,7 @@ const AddAToy = () => {
     const sellerName = form.sellerName.value;
     const email = form.email.value;
     const photoUrl = form.photo.value;
-    const price = form.price.value;
+    const price = parseInt(form.price.value);
     const rating = form.rating.value;
     const quantity = form.quantity.value;
     const description = form.description.value;
@@ -41,7 +41,8 @@ const AddAToy = () => {
             icon: "success",
           text: "Successfully added a toy",
         });
-      });
+        });
+    form.reset();
   };
 
   return (

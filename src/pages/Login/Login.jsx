@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthContextProviders/AuthProviders';
 import { FaGoogle,FaGithub } from 'react-icons/fa';
 
 const Login = () => {
     const { signInWithGoogle, loginUser } = useContext(AuthContext);
-
+    const navigate = useNavigate();
 
   const handleSubmit = (e) => {
 
@@ -25,11 +25,13 @@ const Login = () => {
       });
     form.reset()
   }
-  
+
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then((result) => {
         console.log(result);
+        navigate('/')
+
       })
       .catch((error) => {
         console.log(error.message);

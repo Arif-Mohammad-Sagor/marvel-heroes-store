@@ -40,7 +40,7 @@ const UpdateToy = () => {
   return (
     <div>
       <div>
-        <p className=" text-center text-2xl mt-4 font-bold ">Add A Toy</p>
+        <p className=" text-center text-2xl mt-4 font-bold ">Update A Toy</p>
         <div className="w-3/5 mx-auto shadow-md">
           <form onSubmit={handleUpdate} className="card-body">
             <div className="grid grid-cols-2">
