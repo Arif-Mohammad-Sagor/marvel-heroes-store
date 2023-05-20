@@ -36,7 +36,7 @@ const ShopCategory = () => {
         <TabList>
           <Tab>Civil War</Tab>
           <Tab>Avengers</Tab>
-          <Tab>Rangkok</Tab>
+          <Tab>Transformer</Tab>
         </TabList>
 
         <TabPanel>

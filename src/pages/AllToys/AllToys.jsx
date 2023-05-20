@@ -9,18 +9,18 @@ const AllToys = () => {
     const [searchText, setSearchText] = useState('');
 
     const handleSearch = () => {
-           fetch(`http://localhost:5000/allToys/${searchText}`)
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    setAllToys(data);
-                });
+           fetch(`http://localhost:5000/allToys/product/${searchText}`)
+             .then((res) => res.json())
+             .then((data) => {
+               console.log(data);
+               setAllToys(data);
+             });
 
     }
-    const handleDetail = (_id) => {
-        console.log(_id)
-    }
-
+    // const handleDetail = (_id) => {
+    //     console.log(_id)
+    // }
+console.log(searchText)
     return (
       <div>
         <p className="text-center text-4xl my-4">My All Jobs</p>

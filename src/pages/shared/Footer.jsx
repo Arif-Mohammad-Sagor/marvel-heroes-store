@@ -51,7 +51,7 @@ const Footer = () => {
     //     <a className="link link-hover">Cookie policy</a>
     //   </div>
     // </footer>
-    <footer className="footer p-10 bg-base-200 text-base-content">
+    <footer className="footer p-10 bg-slate-100 text-base-content">
       <div className="items-center grid-flow-col">
         <img src={logo} className=" rounded-md" />
         <p>
