@@ -39,26 +39,21 @@ const ShopCategory = () => {
           <Tab>Rangkok</Tab>
         </TabList>
 
-        {/* <div className="grid md:grid-cols-2">
-          {toys &&
-            toys.map((toy) => (
-              <div key={toy._id}>
-                <p>{toy?.Name}</p>
-              </div>
-            ))}
-        </div> */}
-        <div className="grid md:grid-cols-2">
-          {toys &&
-            toys.map((toy) => {
-              return (
-                <div>
-                  <TabPanel key={toy._id}>
-                    <p>{toy.name}</p>
-                  </TabPanel>
-                </div>
-              );
-            })}
-        </div>
+        <TabPanel>
+          {toys.map((toy) => (
+            <p>{toy.toyName}</p>
+          ))}
+        </TabPanel>
+        <TabPanel>
+          {toys.map((toy) => (
+            <p>{toy.toyName}</p>
+          ))}
+        </TabPanel>
+        <TabPanel>
+          {toys.map((toy) => (
+            <p>{toy.toyName}</p>
+          ))}
+        </TabPanel>
       </Tabs>
     </div>
   );
