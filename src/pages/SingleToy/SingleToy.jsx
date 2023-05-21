@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { useLoaderData } from 'react-router-dom'
 import { AuthContext } from '../../AuthContextProviders/AuthProviders';
-
+import PageTitle from '../shared/PageTitle';
 
 const SingleToy = () => {
     const singleToys = useLoaderData();
@@ -28,6 +28,7 @@ const SingleToy = () => {
   } else {
     return (
       <div className="grid grid-cols-2">
+        <PageTitle title="SignleToys"> </PageTitle>
         <div className="bg-slate-200 flex items-center justify-center">
           <div>
             <p>

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../AuthContextProviders/AuthProviders";
 import Swal from "sweetalert2";
-
+import PageTitle from "../shared/PageTitle";
 const AddAToy = () => {
   const { user } = useContext(AuthContext);
   const [selectValue, setSelectValue] = useState("");
@@ -47,6 +47,7 @@ const AddAToy = () => {
 
   return (
     <div>
+      <PageTitle title="AddToys"></PageTitle>
       <p className=" text-center text-2xl mt-4 font-bold ">Add A Toy</p>
       <div className="w-3/5 mx-auto shadow-md">
         <form onSubmit={handleAddToy} className="card-body">

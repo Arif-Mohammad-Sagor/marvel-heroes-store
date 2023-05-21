@@ -1,13 +1,16 @@
 import React, { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthContextProviders/AuthProviders";
 import { FaGoogle } from "react-icons/fa";
+import PageTitle from "../shared/PageTitle";
 
 const Login = () => {
   const { signInWithGoogle, loginUser } = useContext(AuthContext);
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
 
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -22,6 +25,7 @@ const Login = () => {
         console.log("successfully loggedin");
         setSuccess("successful registration");
         setError("");
+         navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);
@@ -37,7 +41,7 @@ const Login = () => {
         console.log(result);
         setSuccess("successful registration");
         setError("");
-        navigate("/");
+        navigate(from  || '/',  { replace: true });
       })
       .catch((error) => {
         console.log(error.message);
@@ -47,6 +51,7 @@ const Login = () => {
   };
   return (
     <div>
+      <PageTitle title="Login"> </PageTitle>
       <div className="w-3/5 mx-auto">
         <div className=" min-h-screen">
           <div className=" flex-col">

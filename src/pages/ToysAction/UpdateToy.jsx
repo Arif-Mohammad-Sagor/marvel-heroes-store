@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../AuthContextProviders/AuthProviders";
 import Swal from "sweetalert2";
+import PageTitle from "../shared/PageTitle";
 
 const UpdateToy = () => {
   const data = useLoaderData();
@@ -42,6 +43,7 @@ const UpdateToy = () => {
   console.log(data);
   return (
     <div>
+      <PageTitle title="UpdateToys"> </PageTitle>
       <div>
         <p className=" text-center text-2xl mt-4 font-bold ">Update A Toy</p>
         <div className="w-3/5 mx-auto shadow-md">

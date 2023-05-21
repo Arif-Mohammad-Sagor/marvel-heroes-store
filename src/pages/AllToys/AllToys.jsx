@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import PageTitle from "../shared/PageTitle";
 
 const AllToys = () => {
   const toys = useLoaderData();
@@ -30,6 +31,7 @@ const AllToys = () => {
   // console.log(toys);
   return (
     <div>
+      <PageTitle title="AllToys"> </PageTitle>
       <p className="text-center text-4xl my-4">My All Jobs</p>
       <div className="grid grid-cols-2">
         <div className="form-control  mx-auto">

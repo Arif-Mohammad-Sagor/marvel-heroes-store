@@ -92,13 +92,11 @@ const Navbar = () => {
           ) : (
             <></>
           )}
-          {user ? (
+
             <li>
               <NavLink to="/addaToy"> AddToys</NavLink>
             </li>
-          ) : (
-            <></>
-          )}
+         
         </ul>
       </div>
       <div className="navbar-end ">

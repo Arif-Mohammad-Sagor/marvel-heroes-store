@@ -47,7 +47,7 @@ const ShopCategory = () => {
         <TabPanel>
           <div className="flex flex-col md:flex-row gap-4 mt-8">
             {toys.map((toy) => (
-              <div className="card w-96 bg-base-100 shadow-xl">
+              <div key={toy._id} className="card w-96 bg-base-100 shadow-xl">
                 <figure>
                   <img
                     src={toy.photoUrl}
@@ -86,7 +86,7 @@ const ShopCategory = () => {
         <TabPanel>
           <div className="flex flex-col md:flex-row gap-4 mt-8">
             {toys.map((toy) => (
-              <div className="card w-96 bg-base-100 shadow-xl">
+              <div key={toy._id} className="card w-96 bg-base-100 shadow-xl">
                 <figure>
                   <img
                     src={toy.photoUrl}
@@ -125,7 +125,7 @@ const ShopCategory = () => {
         <TabPanel>
           <div className="flex flex-col md:flex-row gap-4 mt-8">
             {toys.map((toy) => (
-              <div className="card w-96 bg-base-100 shadow-xl">
+              <div key={toy._id} className="card w-96 bg-base-100 shadow-xl">
                 <figure>
                   <img
                     src={toy.photoUrl}

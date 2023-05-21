@@ -1,8 +1,10 @@
 import React from 'react'
-
+import PageTitle from '../shared/PageTitle';
 const Blog = () => {
+
   return (
     <div className="px-10 mt-8">
+      <PageTitle title="Blogs"></PageTitle>
       <div>
         <p className="font-bold text-xl mb-4">
           What is an access token and refresh token? How do they work and where
@@ -100,13 +102,13 @@ const Blog = () => {
         <p className="font-bold text-xl mb-4">
           What is express js? What is Nest JS ?
         </p>
-        <p className='my-3'>
+        <p className="my-3">
           Express.js is a popular web application framework for Node.js. It
           provides a simple and minimalist approach to building web servers and
           APIs. With Express.js, developers can easily handle HTTP requests,
           define routes, manage middleware, and render dynamic HTML pages.
         </p>
-        <p className='my-3'>
+        <p className="my-3">
           NestJS, on the other hand, is a framework for building scalable and
           efficient server-side applications. It is built on top of Node.js and
           uses TypeScript as its primary language. NestJS follows the modular
@@ -120,10 +122,9 @@ const Blog = () => {
           What is MongoDB aggregate and how does it work
         </p>
         <p className='my-4 className="my-3"'>
-         In MongoDB, the
-          aggregate function is used to perform advanced operations on
-          collections of documents. It works by using a series of steps called
-          stages that process the data in a specific order.
+          In MongoDB, the aggregate function is used to perform advanced
+          operations on collections of documents. It works by using a series of
+          steps called stages that process the data in a specific order.
         </p>
         <ol className="list-decimal">
           <li className="my-3">

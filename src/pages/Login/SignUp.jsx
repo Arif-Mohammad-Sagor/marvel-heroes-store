@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import {FaGoogle} from 'react-icons/fa'
 import { AuthContext } from "../../AuthContextProviders/AuthProviders";
 import { updateProfile } from "firebase/auth";
-
+import PageTitle from "../shared/PageTitle";
 const SignUp = () => {
 
   const [success, setSuccess] = useState("");
@@ -65,6 +65,7 @@ const SignUp = () => {
 
   return (
     <div className="w-full mx-auto mb-4">
+      <PageTitle title="Signup"> </PageTitle>
       <div className="hero min-h-screen">
         <div className="hero-content flex-col">
           <div className="text-center ">
