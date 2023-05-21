@@ -4,6 +4,7 @@ import HeroGallery from '../HeroGallery'
 import ShopCategory from '../ShopCategory'
 import Review from '../Review'
 import PageTitle from '../../shared/PageTitle'
+import FeaturedHeros from '../FeaturedHeros'
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <Hero></Hero>
       <HeroGallery></HeroGallery>
       <ShopCategory></ShopCategory>
+      <FeaturedHeros></FeaturedHeros>
       <Review></Review>
     </>
   )

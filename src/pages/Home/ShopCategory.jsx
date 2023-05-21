@@ -45,9 +45,12 @@ const ShopCategory = () => {
         </TabList>
 
         <TabPanel>
-          <div className="flex flex-col md:flex-row gap-4 mt-8">
+          <div className="flex flex-col md:flex-row gap-4 mt-8  justify-center">
             {toys.map((toy) => (
-              <div key={toy._id} className="card w-96 bg-base-100 shadow-xl">
+              <div
+                key={toy._id}
+                className="card w-96 mx-auto  bg-base-100 shadow-xl"
+              >
                 <figure>
                   <img
                     src={toy.photoUrl}
@@ -84,9 +87,12 @@ const ShopCategory = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="flex flex-col md:flex-row gap-4 mt-8">
+          <div className="flex flex-col md:flex-row gap-4 mt-8 justify-center">
             {toys.map((toy) => (
-              <div key={toy._id} className="card w-96 bg-base-100 shadow-xl">
+              <div
+                key={toy._id}
+                className="card w-96 mx-auto bg-base-100 shadow-xl"
+              >
                 <figure>
                   <img
                     src={toy.photoUrl}
@@ -123,9 +129,9 @@ const ShopCategory = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="flex flex-col md:flex-row gap-4 mt-8">
+          <div className="flex flex-col md:flex-row gap-4 mt-8 justify-center">
             {toys.map((toy) => (
-              <div key={toy._id} className="card w-96 bg-base-100 shadow-xl">
+              <div key={toy._id} className="card w-96 mx-auto bg-base-100 shadow-xl">
                 <figure>
                   <img
                     src={toy.photoUrl}
