@@ -17,7 +17,7 @@ const HeroGallery = () => {
   return (
     <div className="my-8">
       <p
-        className="text-5xl font-serif mb-6 text-center pb-8"
+        className="md:text-5xl leading-none md:mb-6 text-center md:pb-8"
         data-aos="fade-up"
       >
         Our Heroes{" "}

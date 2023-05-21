@@ -5,10 +5,10 @@ import banner4 from "../../assets/banner/banner-4.jpg";
 
 const Hero = () => {
   return (
-    <div className="flex  mt-8">
-      <div className="w-2/5  rounded-l-md h-[450px] bg-slate-100 pl-8 flex justify-center items-center">
+    <div className="flex flex-col md:flex-row mt-1 md:mt-8">
+      <div className="md:w-2/5 w-full  md:rounded-l-md py-8 md:h-[450px] bg-slate-100 pl-8 flex justify-center items-center">
         <div className="">
-          <p className="text-6xl  font-semibold font-medium leading-none italic">
+          <p className="md:text-6xl text-2xl   leading-1 italic">
             {" "}
             Be a Super Hero
             <br /> to Save the Earth
@@ -16,7 +16,7 @@ const Hero = () => {
         </div>
       </div>
       {/* second half */}
-      <div className="w-3/5">
+      <div className="md:w-3/5">
         <div className="carousel w-full">
           <div id="item1" className="carousel-item w-full">
             <img src={banner1} className="w-full h-[450px] rounded-md" />

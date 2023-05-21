@@ -71,7 +71,7 @@ const Navbar = () => {
           </ul>
         </div>
         <img src={logo} alt="company-logo" className="ro" />
-        <p className="md:text-2xl ml-4 font-semibold font-serif"> Toys-Mart</p>
+        <p className="md:text-2xl ml-4 font-semibold hidden md:block font-serif"> Toys-Mart</p>
       </div>
       <div className="lg:ml-64 hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -96,7 +96,7 @@ const Navbar = () => {
             <li>
               <NavLink to="/addaToy"> AddToys</NavLink>
             </li>
-         
+
         </ul>
       </div>
       <div className="navbar-end ">

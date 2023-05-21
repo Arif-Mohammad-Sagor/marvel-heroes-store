@@ -13,7 +13,7 @@ import { Pagination } from "swiper";
 const Review = () => {
   return (
     <>
-      <h1 className="text-4xl font-semibold leading-none text-center mt-4" >
+      <h1 className="md:text-4xl  md:font-semibold text-lg leading-none text-center mt-4" >
         What our customers are saying about us
       </h1>
       <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
@@ -32,7 +32,7 @@ const Review = () => {
                     <path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
                     <path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
                   </svg>
-                  <p className="px-6 py-1 text-lg italic">
+                  <p className="px-6 py-1 md:text-lg italic">
                     I am very pleasent, amet consectetur adipisicing elit.
                     Voluptatibus quibusdam, eligendi exercitationem molestias
                     possimus facere.
@@ -66,7 +66,7 @@ const Review = () => {
                       d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"
                     ></path>
                   </svg>
-                  <p className="px-6 py-1 text-lg italic">
+                  <p className="px-6 py-1 md:text-lg italic">
                     Thier Product is awesome harum asperiores iusto quos quasi
                     quis quae! Fugit doloribus, voluptatum quidem magnam velit
                     excepturi nobis, reprehenderit ducimus incidunt quisquam
@@ -108,7 +108,7 @@ const Review = () => {
                     <path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
                     <path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
                   </svg>
-                  <p className="px-6 py-1 text-lg italic">
+                  <p className="px-6 py-1 md:text-lg italic">
                    I am very glad by using this amet consectetur adipisicing elit.
                     Voluptatibus quibusdam, eligendi exercitationem molestias
                     possimus facere.
@@ -142,7 +142,7 @@ const Review = () => {
                       d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"
                     ></path>
                   </svg>
-                  <p className="px-6 py-1 text-lg italic">
+                  <p className="px-6 py-1 md:text-lg italic">
                     Thier Product is awesome asperiores iusto quos quasi quis
                     quae! Fugit doloribus, voluptatum quidem magnam velit
                     excepturi nobis, reprehenderit ducimus incidunt quisquam
@@ -185,7 +185,7 @@ const Review = () => {
                     <path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
                     <path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
                   </svg>
-                  <p className="px-6 py-1 text-lg italic">
+                  <p className="px-6 py-1 md:text-lg italic">
                     My kids are very happy, amet consectetur adipisicing elit.
                     Voluptatibus quibusdam, eligendi exercitationem molestias
                     possimus facere.
@@ -219,7 +219,7 @@ const Review = () => {
                       d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"
                     ></path>
                   </svg>
-                  <p className="px-6 py-1 text-lg italic">
+                  <p className="px-6 py-1 md:text-lg italic">
                    This product gives a real vibe harum asperiores iusto quos
                     quasi quis quae! Fugit doloribus, voluptatum quidem magnam
                     velit excepturi nobis, reprehenderit ducimus incidunt
@@ -262,7 +262,7 @@ const Review = () => {
                     <path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
                     <path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
                   </svg>
-                  <p className="px-6 py-1 text-lg italic">
+                  <p className="px-6 py-1 md:text-lg italic">
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                     Voluptatibus quibusdam, eligendi exercitationem molestias
                     possimus facere.
@@ -296,7 +296,7 @@ const Review = () => {
                       d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"
                     ></path>
                   </svg>
-                  <p className="px-6 py-1 text-lg italic">
+                  <p className="px-6 py-1 md:text-lg italic">
                     Accusantium illum cupiditate harum asperiores iusto quos
                     quasi quis quae! Fugit doloribus, voluptatum quidem magnam
                     velit excepturi nobis, reprehenderit ducimus incidunt

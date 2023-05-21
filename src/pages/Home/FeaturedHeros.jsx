@@ -7,19 +7,19 @@ const FeaturedHeros = () => {
     <section className=" dark:text-gray-100">
       <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
         <div>
-          <h2 className="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-50">
+          <h2 className="md:text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-50">
             Learn About Our Featured Heros
           </h2>
-          <p className="max-w-3xl mx-auto mt-4 text-xl text-center dark:text-gray-400">
+          <p className="max-w-3xl mx-auto mt-4 md:text-xl text-lg text-center dark:text-gray-400">
             The savior of the Universe
           </p>
         </div>
         <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
           <div>
-            <h3 className="text-2xl font-bold tracking-tight sm:text-3xl dark:text-gray-50">
+            <h3 className="md:text-2xl font-bold tracking-tight sm:text-3xl dark:text-gray-50">
               Who are these Marvel Heroes ?
             </h3>
-            <p className="mt-3 text-lg dark:text-gray-400">
+            <p className="mt-3 md:text-lg dark:text-gray-400">
               Marvel heroes are beloved worldwide, captivating audiences with
               their extraordinary powers and compelling stories. From the iconic
               Avengers to the diverse X-Men,
@@ -45,7 +45,7 @@ const FeaturedHeros = () => {
                   </div>
                 </div>
                 <div className="ml-4">
-                  <h4 className="text-lg font-medium leading-6 dark:text-gray-50">
+                  <h4 className="md:text-lg font-medium leading-6 dark:text-gray-50">
                     "Assemble: The Epic Journey of the Avengers"
                   </h4>
                   <p className="mt-2 dark:text-gray-400">
@@ -75,7 +75,7 @@ const FeaturedHeros = () => {
                   </div>
                 </div>
                 <div className="ml-4">
-                  <h4 className="text-lg font-medium leading-6 dark:text-gray-50">
+                  <h4 className="md:text-lg font-medium leading-6 dark:text-gray-50">
                     "Unleashed: The Incredible Power of Hulk"
                   </h4>
                   <p className="mt-2 dark:text-gray-400">
@@ -105,7 +105,7 @@ const FeaturedHeros = () => {
                   </div>
                 </div>
                 <div className="ml-4">
-                  <h4 className="text-lg font-medium leading-6 dark:text-gray-50">
+                  <h4 className="md:text-lg font-medium leading-6 dark:text-gray-50">
                     "Web-Slinging Adventures: The Spectacular Spider-Man"
                   </h4>
                   <p className="mt-2 dark:text-gray-400">
@@ -128,10 +128,10 @@ const FeaturedHeros = () => {
         <div>
           <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
             <div className="lg:col-start-2">
-              <h3 className="text-2xl font-bold tracking-tight sm:text-3xl dark:text-gray-50">
+              <h3 className="md:text-2xl font-bold tracking-tight sm:text-3xl dark:text-gray-50">
                 "Guardians of the Galaxy: Cosmic Conquerors"
               </h3>
-              <p className="mt-3 text-lg dark:text-gray-400">
+              <p className="mt-3 md:text-lg dark:text-gray-400">
                 Guardians of the Galaxy introduces a ragtag group of misfits who
                 come together, defying odds and cosmic dangers, to protect the
                 galaxy from interstellar villains .
@@ -157,14 +157,13 @@ const FeaturedHeros = () => {
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-lg font-medium leading-6 dark:text-gray-50">
+                    <h4 className="md:text-lg font-medium leading-6 dark:text-gray-50">
                       "Mystical Heroes: Doctor Strange and the Multiverse"
                     </h4>
                     <p className="mt-2 dark:text-gray-400">
                       Doctor Strange and the Multiverse" invites us to journey
                       alongside the brilliant and arrogant
                       neurosurgeon-turned-sorcerer supreme, Dr. Stephen Strange,
-
                     </p>
                   </div>
                 </div>
@@ -188,7 +187,7 @@ const FeaturedHeros = () => {
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-lg font-medium leading-6 dark:text-gray-50">
+                    <h4 className="md:text-lg font-medium leading-6 dark:text-gray-50">
                       "Captain Marvel: The Heroine of the Stars"
                     </h4>
                     <p className="mt-2 dark:text-gray-400">
@@ -218,7 +217,7 @@ const FeaturedHeros = () => {
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-lg font-medium leading-6 dark:text-gray-50">
+                    <h4 className="md:text-lg font-medium leading-6 dark:text-gray-50">
                       "Iron Man: Genius, Billionaire, Superhero"
                     </h4>
                     <p className="mt-2 dark:text-gray-400">

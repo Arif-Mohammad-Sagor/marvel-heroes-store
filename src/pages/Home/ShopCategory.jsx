@@ -31,7 +31,7 @@ const ShopCategory = () => {
 }
   return (
     <div className="my-8">
-      <p className="text-5xl font-serif mb-6 text-center py-8">
+      <p className="md:text-5xl leading-none mb-6 text-center py-8">
         Shop By Category
       </p>
 
@@ -43,29 +43,34 @@ const ShopCategory = () => {
           </Tab>
           <Tab onClick={() => setTabText("Avengers")}>Avengers</Tab>
         </TabList>
-
         <TabPanel>
-          <div className="flex flex-col md:flex-row gap-4 mt-8  justify-center">
+          <div className="flex flex-col md:flex-row gap-4 mt-8 justify-center">
             {toys.map((toy) => (
               <div
                 key={toy._id}
-                className="card w-96 mx-auto  bg-base-100 shadow-xl"
+                className="card md:w-96  w-full md:mx-auto bg-base-100 px-2 shadow-xl"
               >
                 <figure>
                   <img
                     src={toy.photoUrl}
-                    className="w-60 h-60 object-cover"
+                    className="md:w-60 md:h-60 w-full object-cover"
                     alt={toy.toyName}
                   />
                 </figure>
-                <div className="card-body">
-                  <h2 className="card-title">ToyName: {toy.toyName}</h2>
-                  <h2 className="card-title">ToyPrice: ${toy.price}</h2>
-                  <h2 className="card-title">ToyRating: {toy.rating}</h2>
+                <div className="card-body px-2">
+                  <h2 className="md:card-title text-xs">
+                    ToyName: {toy.toyName}
+                  </h2>
+                  <h2 className="md:card-title text-xs">
+                    ToyPrice: ${toy.price}
+                  </h2>
+                  <h2 className="md:card-title text-xs">
+                    ToyRating: {toy.rating}
+                  </h2>
                   <div className="card-actions justify-star">
                     {user ? (
                       <>
-                        <button className="btn btn-primary">
+                        <button className="btn md:btn-primary btn-xs">
                           <Link to={`/singleToys/${toy._id}`}>View Detail</Link>
                         </button>
                       </>
@@ -74,7 +79,7 @@ const ShopCategory = () => {
                         {" "}
                         <button
                           onClick={() => handleViewDetail(`${toy._id}`)}
-                          className="btn btn-secondary"
+                          className="btn md:btn-secondary btn-xs"
                         >
                           View Detail
                         </button>
@@ -91,23 +96,29 @@ const ShopCategory = () => {
             {toys.map((toy) => (
               <div
                 key={toy._id}
-                className="card w-96 mx-auto bg-base-100 shadow-xl"
+                className="card md:w-96  w-full md:mx-auto bg-base-100 px-2 shadow-xl"
               >
                 <figure>
                   <img
                     src={toy.photoUrl}
-                    className="w-60 h-60 object-cover"
+                    className="md:w-60 md:h-60 w-full object-cover"
                     alt={toy.toyName}
                   />
                 </figure>
-                <div className="card-body">
-                  <h2 className="card-title">ToyName: {toy.toyName}</h2>
-                  <h2 className="card-title">ToyPrice: ${toy.price}</h2>
-                  <h2 className="card-title">ToyRating: {toy.rating}</h2>
+                <div className="card-body px-2">
+                  <h2 className="md:card-title text-xs">
+                    ToyName: {toy.toyName}
+                  </h2>
+                  <h2 className="md:card-title text-xs">
+                    ToyPrice: ${toy.price}
+                  </h2>
+                  <h2 className="md:card-title text-xs">
+                    ToyRating: {toy.rating}
+                  </h2>
                   <div className="card-actions justify-star">
                     {user ? (
                       <>
-                        <button className="btn btn-primary">
+                        <button className="btn md:btn-primary btn-xs">
                           <Link to={`/singleToys/${toy._id}`}>View Detail</Link>
                         </button>
                       </>
@@ -116,7 +127,7 @@ const ShopCategory = () => {
                         {" "}
                         <button
                           onClick={() => handleViewDetail(`${toy._id}`)}
-                          className="btn btn-secondary"
+                          className="btn md:btn-secondary btn-xs"
                         >
                           View Detail
                         </button>
@@ -131,22 +142,31 @@ const ShopCategory = () => {
         <TabPanel>
           <div className="flex flex-col md:flex-row gap-4 mt-8 justify-center">
             {toys.map((toy) => (
-              <div key={toy._id} className="card w-96 mx-auto bg-base-100 shadow-xl">
+              <div
+                key={toy._id}
+                className="card md:w-96  w-full md:mx-auto bg-base-100 px-2 shadow-xl"
+              >
                 <figure>
                   <img
                     src={toy.photoUrl}
-                    className="w-60 h-60 object-cover"
+                    className="md:w-60 md:h-60 w-full object-cover"
                     alt={toy.toyName}
                   />
                 </figure>
-                <div className="card-body">
-                  <h2 className="card-title">ToyName: {toy.toyName}</h2>
-                  <h2 className="card-title">ToyPrice: ${toy.price}</h2>
-                  <h2 className="card-title">ToyRating: {toy.rating}</h2>
+                <div className="card-body px-2">
+                  <h2 className="md:card-title text-xs">
+                    ToyName: {toy.toyName}
+                  </h2>
+                  <h2 className="md:card-title text-xs">
+                    ToyPrice: ${toy.price}
+                  </h2>
+                  <h2 className="md:card-title text-xs">
+                    ToyRating: {toy.rating}
+                  </h2>
                   <div className="card-actions justify-star">
                     {user ? (
                       <>
-                        <button className="btn btn-primary">
+                        <button className="btn md:btn-primary btn-xs">
                           <Link to={`/singleToys/${toy._id}`}>View Detail</Link>
                         </button>
                       </>
@@ -155,7 +175,7 @@ const ShopCategory = () => {
                         {" "}
                         <button
                           onClick={() => handleViewDetail(`${toy._id}`)}
-                          className="btn btn-secondary"
+                          className="btn md:btn-secondary btn-xs"
                         >
                           View Detail
                         </button>
