@@ -5,14 +5,22 @@ import { Navigate, useLocation } from "react-router-dom";
 
 const PrivateRoute = ({ children }) => {
 
-    const { user } = useContext(AuthContext);
-    const location = useLocation();
+    const { user,loading } = useContext(AuthContext);
 
-    if (user) {
-        return children;
-    } else {
-        return <Navigate to="/login"></Navigate>
+    if (loading) {
+      return <progress className="progress w-56"></progress>;
     }
+
+    if (user?.email) {
+      return children;
+    }
+
+    return <Navigate to="/login" replace></Navigate>;
+    // if (user) {
+    //     return children;
+    // } else {
+    //     return <Navigate to="/login"></Navigate>
+    // }
 
 };
 export default PrivateRoute;

@@ -14,10 +14,11 @@ const ShopCategory = () => {
   console.log(user);
 
   useEffect(() => {
-     fetch(
-       `http://localhost:5000/allToys/subCategoryProducts?subCategory=${tabtext}&limit=2`
-    ).then(res => res.json())
-    .then(data =>setToys(data))
+  fetch(
+    `https://assignment-11-server-flax.vercel.app/allToys/subCategoryProducts?subCategory=${tabtext}&limit=2`
+  )
+    .then((res) => res.json())
+    .then((data) => setToys(data));
   }, [tabtext]);
 
     console.log(toys);
@@ -48,7 +49,11 @@ const ShopCategory = () => {
             {toys.map((toy) => (
               <div className="card w-96 bg-base-100 shadow-xl">
                 <figure>
-                  <img src={toy.img} alt={toy.toyName} />
+                  <img
+                    src={toy.photoUrl}
+                    className="w-60 h-60 object-cover"
+                    alt={toy.toyName}
+                  />
                 </figure>
                 <div className="card-body">
                   <h2 className="card-title">ToyName: {toy.toyName}</h2>
@@ -83,7 +88,11 @@ const ShopCategory = () => {
             {toys.map((toy) => (
               <div className="card w-96 bg-base-100 shadow-xl">
                 <figure>
-                  <img src={toy.img} alt={toy.toyName} />
+                  <img
+                    src={toy.photoUrl}
+                    className="w-60 h-60 object-cover"
+                    alt={toy.toyName}
+                  />
                 </figure>
                 <div className="card-body">
                   <h2 className="card-title">ToyName: {toy.toyName}</h2>
@@ -92,7 +101,9 @@ const ShopCategory = () => {
                   <div className="card-actions justify-star">
                     {user ? (
                       <>
-                        <Link to={`/singleToys/${toy._id}`}>View Detail</Link>
+                        <button className="btn btn-primary">
+                          <Link to={`/singleToys/${toy._id}`}>View Detail</Link>
+                        </button>
                       </>
                     ) : (
                       <>
@@ -116,7 +127,11 @@ const ShopCategory = () => {
             {toys.map((toy) => (
               <div className="card w-96 bg-base-100 shadow-xl">
                 <figure>
-                  <img src={toy.img} alt={toy.toyName} />
+                  <img
+                    src={toy.photoUrl}
+                    className="w-60 h-60 object-cover"
+                    alt={toy.toyName}
+                  />
                 </figure>
                 <div className="card-body">
                   <h2 className="card-title">ToyName: {toy.toyName}</h2>
@@ -125,7 +140,9 @@ const ShopCategory = () => {
                   <div className="card-actions justify-star">
                     {user ? (
                       <>
-                        <Link to={`/singleToys/${toy._id}`}>View Detail</Link>
+                        <button className="btn btn-primary">
+                          <Link to={`/singleToys/${toy._id}`}>View Detail</Link>
+                        </button>
                       </>
                     ) : (
                       <>

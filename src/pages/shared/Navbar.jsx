@@ -1,16 +1,19 @@
 import React, { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { AuthContext } from "../../AuthContextProviders/AuthProviders";
+import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
   console.log(user);
 
   const handleLogout = () => {
     logOut()
       .then((res) => {
         console.log(res);
+        navigate('/');
       })
 
       .catch((error) => {
@@ -104,9 +107,12 @@ const Navbar = () => {
             {user ? (
               <>
                 <img
+                  data-tooltip-id="my-tooltip"
+                  data-tooltip-content={user?.displayName}
                   src={user.photoURL}
                   className="w-8 h-8 rounded-full bg-gray-500"
                 />
+                <Tooltip id="my-tooltip" />
 
                 <button className="btn btn-primary " onClick={handleLogout}>
                   {" "}

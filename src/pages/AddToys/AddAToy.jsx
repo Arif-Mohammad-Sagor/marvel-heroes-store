@@ -29,19 +29,19 @@ const AddAToy = () => {
       description,
       subCategory: selectValue,
     };
-    fetch("http://localhost:5000/addToys", {
+    fetch("https://assignment-11-server-flax.vercel.app/addToys", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(toyInfo),
     })
       .then((res) => res.json())
-        .then((data) => {
-            console.log(data);
+      .then((data) => {
+        console.log(data);
         Swal.fire({
-            icon: "success",
+          icon: "success",
           text: "Successfully added a toy",
         });
-        });
+      });
     form.reset();
   };
 

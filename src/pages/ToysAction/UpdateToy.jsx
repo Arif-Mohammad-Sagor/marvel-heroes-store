@@ -20,20 +20,23 @@ const UpdateToy = () => {
       description,
     };
 
-    fetch(`http://localhost:5000/updateToys/${data._id}`, {
-      method: "PATCH",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(updatedToyInfo),
-    })
+    fetch(
+      `https://assignment-11-server-flax.vercel.app/updateToys/${data._id}`,
+      {
+        method: "PATCH",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(updatedToyInfo),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-          if (data.modifiedCount > 0) {
- Swal.fire({
-   icon: "success",
-   text: "Successfully updated a toy",
- });
-       }
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            icon: "success",
+            text: "Successfully updated a toy",
+          });
+        }
       });
   };
   console.log(data);
@@ -151,7 +154,7 @@ const UpdateToy = () => {
               ></textarea>
             </div>
             <button type="submit" className="btn  btn-primary">
-              Add Toy
+              Update Toy
             </button>
           </form>
         </div>

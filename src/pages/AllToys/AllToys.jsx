@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Link,  useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const AllToys = () => {
-
   const toys = useLoaderData();
   const [allToys, setAllToys] = useState(toys);
   const [searchText, setSearchText] = useState("");
   const [sortValue, setSortValue] = useState("ascending");
 
   const handleSearch = () => {
-    fetch(`http://localhost:5000/allToys/product/${searchText}`)
+    fetch(
+      `https://assignment-11-server-flax.vercel.app/allToys/product/${searchText}`
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -19,11 +20,13 @@ const AllToys = () => {
   const handleSort = (e) => {
     console.log(e.target.value);
     // setSortValue(e.target.value);
-    fetch(`http://localhost:5000/allToys/sortProduct/${e.target.value}`)
-      .then(res => res.json())
-    .then(data =>setAllToys(data))
-}
-  console.log(allToys );
+    fetch(
+      `https://assignment-11-server-flax.vercel.app/allToys/sortProduct/${e.target.value}`
+    )
+      .then((res) => res.json())
+      .then((data) => setAllToys(data));
+  };
+  console.log(allToys);
   // console.log(toys);
   return (
     <div>

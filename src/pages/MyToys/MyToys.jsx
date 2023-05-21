@@ -8,29 +8,30 @@ const MyToys = () => {
   const [myToys, setMyToys] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/usersToy?email=${user?.email}`)
+    fetch(
+      `https://assignment-11-server-flax.vercel.app/usersToy?email=${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => setMyToys(data));
   }, []);
 
     const handleDelete = (_id) => {
-        fetch(`http://localhost:5000/usersToy/${_id}`, {
-            method:"DELETE",
+        fetch(`https://assignment-11-server-flax.vercel.app/usersToy/${_id}`, {
+          method: "DELETE",
         })
           .then((res) => res.json())
-            .then((data) => {
-                if (data.deletedCount > 0) {
-                    Swal.fire({
-                      title: "Delete!",
-                      text: "Do you want to detete",
-                      icon: "warning",
-                      confirmButtonText: "Yes",
-                    });
-                      const remaining = myToys.filter((toy) => toy._id !== _id);
-                      setMyToys(remaining);
-                }
-
-          })
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Delete!",
+                text: "Do you want to detete",
+                icon: "warning",
+                confirmButtonText: "Yes",
+              });
+              const remaining = myToys.filter((toy) => toy._id !== _id);
+              setMyToys(remaining);
+            }
+          });
 console.log(_id)
     }
   // toyName,

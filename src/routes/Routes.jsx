@@ -39,7 +39,8 @@ const router = createBrowserRouter([
       {
         path: "/allToys",
         element: <AllToys></AllToys>,
-        loader: () => fetch(`http://localhost:5000/allToys`),
+        loader: () =>
+          fetch(`https://assignment-11-server-flax.vercel.app/allToys`),
       },
       {
         path: "/singleToys/:id",
@@ -49,7 +50,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/singleToy/${params.id}`),
+          fetch(
+            `https://assignment-11-server-flax.vercel.app/singleToy/${params.id}`
+          ),
       },
       {
         path: "/addaToy",
@@ -66,7 +69,10 @@ const router = createBrowserRouter([
       {
         path: "/updateToys/:id",
         element: <UpdateToy></UpdateToy>,
-        loader:({params})=>fetch(`http://localhost:5000/singleToy/${params.id}`)
+        loader: ({ params }) =>
+          fetch(
+            `https://assignment-11-server-flax.vercel.app/singleToy/${params.id}`
+          ),
       },
     ],
     errorElement: <Error404></Error404>,
